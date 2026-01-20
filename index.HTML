@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Netflix Style</title>
+    <title>Uday Kumar Alahari - Civil Engineer Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -40,9 +40,9 @@
 
         .logo {
             color: #e50914;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .nav-links {
@@ -65,7 +65,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23222" width="1200" height="600"/><text x="50%" y="50%" font-size="100" fill="%23333" text-anchor="middle" dy=".3em">HERO IMAGE</text></svg>');
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=600&fit=crop');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -74,14 +74,21 @@
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: 650px;
         }
 
         .hero-content h1 {
-            font-size: 60px;
+            font-size: 56px;
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.1;
+        }
+
+        .hero-content .subtitle {
+            font-size: 22px;
+            color: #e50914;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .hero-content p {
@@ -94,6 +101,7 @@
         .hero-buttons {
             display: flex;
             gap: 15px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -107,6 +115,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
         }
 
         .btn-primary {
@@ -164,8 +173,8 @@
         }
 
         .card {
-            min-width: 250px;
-            height: 140px;
+            min-width: 300px;
+            height: 170px;
             background: #2a2a2a;
             border-radius: 4px;
             cursor: pointer;
@@ -182,27 +191,32 @@
         .card-image {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            background-size: cover;
+            background-position: center;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #666;
-            text-align: center;
-            padding: 10px;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent 50%, rgba(0,0,0,0.9));
         }
 
         .card-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 10px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            position: relative;
+            z-index: 1;
+            padding: 15px;
+            width: 100%;
         }
 
         .card-title {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
             margin-bottom: 5px;
         }
@@ -210,11 +224,17 @@
         .card-meta {
             font-size: 11px;
             color: #b3b3b3;
+            line-height: 1.4;
         }
 
         .large-row .card {
-            min-width: 350px;
-            height: 200px;
+            min-width: 400px;
+            height: 225px;
+        }
+
+        .skill-card {
+            min-width: 250px;
+            height: 140px;
         }
 
         footer {
@@ -227,6 +247,31 @@
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info h3 {
+            color: #e50914;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .contact-info p {
+            color: #808080;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: #e50914;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
         .footer-links {
@@ -259,7 +304,11 @@
             }
 
             .hero-content h1 {
-                font-size: 40px;
+                font-size: 36px;
+            }
+
+            .hero-content .subtitle {
+                font-size: 18px;
             }
 
             .nav-links {
@@ -272,7 +321,11 @@
             }
 
             .card {
-                min-width: 200px;
+                min-width: 250px;
+            }
+
+            .large-row .card {
+                min-width: 300px;
             }
         }
     </style>
@@ -280,12 +333,12 @@
 <body>
     <header id="header">
         <nav>
-            <div class="logo">PORTFOLIO</div>
+            <div class="logo">UDAY ALAHARI</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -293,11 +346,12 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Your Name Here</h1>
-            <p>Web Developer & Designer crafting beautiful, functional digital experiences. Specializing in modern web technologies and user-centered design.</p>
+            <div class="subtitle">Civil Engineer | Transportation Engineering</div>
+            <h1>Uday Kumar Alahari</h1>
+            <p>Master of Science in Civil Engineering from Cleveland State University (GPA: 3.8/4.0). Specialized in infrastructure development, transportation engineering, and smart city solutions with experience managing $20M+ projects.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary">▶ View Projects</button>
-                <button class="btn btn-secondary">ℹ More Info</button>
+                <a href="#projects" class="btn btn-primary">▶ View Projects</a>
+                <a href="#contact" class="btn btn-secondary">ℹ Contact Me</a>
             </div>
         </div>
     </section>
@@ -307,175 +361,158 @@
             <h2 class="row-title">Featured Projects</h2>
             <div class="card-row large-row">
                 <div class="card">
-                    <div class="card-image">E-Commerce Platform</div>
-                    <div class="card-info">
-                        <div class="card-title">ShopFlow</div>
-                        <div class="card-meta">React • Node.js • MongoDB</div>
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=450&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">SMART Grants Program - Cleveland</div>
+                            <div class="card-meta">City of Cleveland • RTA Cleveland • Kimley-Horn<br>
+                            AI-powered traffic analysis, Miovision technology deployment, signal optimization for safety and sustainability</div>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">Portfolio Website</div>
-                    <div class="card-info">
-                        <div class="card-title">Creative Studio</div>
-                        <div class="card-meta">HTML • CSS • JavaScript</div>
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&h=450&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Basta Bridge Construction</div>
+                            <div class="card-meta">$8.3M • 3 km Infrastructure Project<br>
+                            Structural design, AutoCAD layouts, drainage optimization</div>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">Mobile App</div>
-                    <div class="card-info">
-                        <div class="card-title">Fitness Tracker</div>
-                        <div class="card-meta">React Native • Firebase</div>
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=450&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Jaleswar Bridge Project</div>
+                            <div class="card-meta">$1.14M • 10-Span Bridge<br>
+                            Site inspections, material testing, structural integrity assessments</div>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">Dashboard UI</div>
-                    <div class="card-info">
-                        <div class="card-title">Analytics Pro</div>
-                        <div class="card-meta">Vue.js • D3.js • REST API</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Social Platform</div>
-                    <div class="card-info">
-                        <div class="card-title">ConnectHub</div>
-                        <div class="card-meta">Next.js • PostgreSQL</div>
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=450&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Hyderabad Residential Complex</div>
+                            <div class="card-meta">$1.2M • 108,900 sq. ft.<br>
+                            Project management, quality assurance, timely delivery</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row-container">
-            <h2 class="row-title">Web Development</h2>
-            <div class="card-row">
+        <div class="row-container" id="experience">
+            <h2 class="row-title">Work Experience</h2>
+            <div class="card-row large-row">
                 <div class="card">
-                    <div class="card-image">Restaurant Site</div>
-                    <div class="card-info">
-                        <div class="card-title">Bistro Deluxe</div>
-                        <div class="card-meta">WordPress • PHP</div>
+                    <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=450&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">QCI - Quality Control Inspection Inc.</div>
+                            <div class="card-meta">Engineering/Construction Intern • Summer 2025 • Cleveland, Ohio<br>
+                            • Supported Contract Managers in document control, submittal reviews, and site supervision across ODOT, Barberton, and Parma projects<br>
+                            • Integrated GIS using ORBITAS and ASTERIX4 for submittals and As-Built verification per CMS 2023 standards<br>
+                            • Reviewed contractor submittals and ensured compliance with city and state specifications<br>
+                            • Supervised infrastructure projects including gas installations, roadway, and concrete ramp repairs<br>
+                            • Managed PBOM, JMF, prevailing wage interviews, GIS tracking, and Summit County office inventory transitions</div>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">Blog Platform</div>
-                    <div class="card-info">
-                        <div class="card-title">TechBlog</div>
-                        <div class="card-meta">Gatsby • GraphQL</div>
+                    <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Dhatri Projects - Construction/Site Engineer</div>
+                            <div class="card-meta">June 2020 - June 2024 • India<br>
+                            • Managed infrastructure and residential projects exceeding $20M, including bridges in Basta ($8.3M, 3 km) and Jaleswar ($1.14M)<br>
+                            • Oversaw a $1.2M, 108,900 sq. ft. residential apartment complex in Hyderabad ensuring timely and quality delivery<br>
+                            • Implemented risk assessments, preventing project delays and ensuring safety and compliance<br>
+                            • Streamlined approvals, achieving 20% reduction in permit time and 15% improvement in scheduling efficiency<br>
+                            • Designed and reviewed bridge layouts using AutoCAD and MicroStation, optimizing alignment, drainage, and structural integrity</div>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">Landing Page</div>
-                    <div class="card-info">
-                        <div class="card-title">StartupLaunch</div>
-                        <div class="card-meta">HTML5 • Tailwind CSS</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">SaaS Platform</div>
-                    <div class="card-info">
-                        <div class="card-title">TaskMaster</div>
-                        <div class="card-meta">Angular • .NET</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Booking System</div>
-                    <div class="card-info">
-                        <div class="card-title">ReserveNow</div>
-                        <div class="card-meta">React • Express</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">CMS Solution</div>
-                    <div class="card-info">
-                        <div class="card-title">ContentFlow</div>
-                        <div class="card-meta">Strapi • Next.js</div>
+                    <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&h=450&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Dhatri Projects - Engineering/Construction Internship</div>
+                            <div class="card-meta">January 2016 - July 2016 • India<br>
+                            • Assisted in the construction of a 10-span bridge in Jaleswar, contributing to site inspections, material testing, and structural integrity assessments</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row-container" id="skills">
-            <h2 class="row-title">Technical Skills</h2>
+            <h2 class="row-title">Technical Skills & Software</h2>
             <div class="card-row">
-                <div class="card">
-                    <div class="card-image">Frontend Development</div>
-                    <div class="card-info">
-                        <div class="card-title">React & Vue</div>
-                        <div class="card-meta">Expert Level</div>
+                <div class="card skill-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">CAD & Design Software</div>
+                            <div class="card-meta">AutoCAD (Advanced) • MicroStation • OpenRoads Designer</div>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-image">Backend Development</div>
-                    <div class="card-info">
-                        <div class="card-title">Node.js & Python</div>
-                        <div class="card-meta">Advanced</div>
+                <div class="card skill-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Analysis & Modeling</div>
+                            <div class="card-meta">Python • SQL Databases • VISSIM • HEC-RAS</div>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-image">Database</div>
-                    <div class="card-info">
-                        <div class="card-title">SQL & NoSQL</div>
-                        <div class="card-meta">Proficient</div>
+                <div class="card skill-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">GIS & Mapping Tools</div>
+                            <div class="card-meta">GIS Tools • ORBITAS • ASTERIX4 • Spatial Analysis</div>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-image">UI/UX Design</div>
-                    <div class="card-info">
-                        <div class="card-title">Figma & Adobe XD</div>
-                        <div class="card-meta">Intermediate</div>
+                <div class="card skill-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Engineering Expertise</div>
+                            <div class="card-meta">Traffic Flow Analysis • Roadway Design • Pavement Evaluation</div>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-image">DevOps</div>
-                    <div class="card-info">
-                        <div class="card-title">Docker & CI/CD</div>
-                        <div class="card-meta">Intermediate</div>
+                <div class="card skill-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Project Management</div>
+                            <div class="card-meta">BIM • Client Coordination • Quality Control • Risk Assessment</div>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-image">Mobile Dev</div>
-                    <div class="card-info">
-                        <div class="card-title">React Native</div>
-                        <div class="card-meta">Advanced</div>
+                <div class="card skill-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Additional Tools</div>
+                            <div class="card-meta">Microsoft Office Suite • Sketch-up • Quantity Estimation</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row-container">
-            <h2 class="row-title">UI/UX Design</h2>
+            <h2 class="row-title">Education</h2>
             <div class="card-row">
                 <div class="card">
-                    <div class="card-image">App Redesign</div>
-                    <div class="card-info">
-                        <div class="card-title">Banking App UI</div>
-                        <div class="card-meta">Mobile Design</div>
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=450&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Cleveland State University</div>
+                            <div class="card-meta">Master of Science in Civil Engineering<br>
+                            Transportation Engineering • GPA: 3.8/4.0 • Graduated December 2025</div>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">Wireframes</div>
-                    <div class="card-info">
-                        <div class="card-title">E-Learning Platform</div>
-                        <div class="card-meta">UX Research</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Branding</div>
-                    <div class="card-info">
-                        <div class="card-title">Tech Startup</div>
-                        <div class="card-meta">Visual Identity</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Dashboard</div>
-                    <div class="card-info">
-                        <div class="card-title">Admin Panel</div>
-                        <div class="card-meta">Interface Design</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">Prototypes</div>
-                    <div class="card-info">
-                        <div class="card-title">Travel App</div>
-                        <div class="card-meta">Interactive Design</div>
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=450&fit=crop');">
+                        <div class="card-info">
+                            <div class="card-title">Deakin University</div>
+                            <div class="card-meta">Geelong, Australia<br>
+                            Grade: Distinction • December 2018 - March 2020</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -484,34 +521,41 @@
 
     <footer id="contact">
         <div class="footer-content">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p><strong>Location:</strong> Cleveland, Ohio 44115, USA</p>
+                <p><strong>Phone:</strong> <a href="tel:+12163276222">(216) 327-6222</a></p>
+                <p><strong>Email:</strong> <a href="mailto:udaynetW@gmail.com">udaynetW@gmail.com</a></p>
+                <p><strong>University Email:</strong> <a href="mailto:2835706@vikes.csuohio.edu">2835706@vikes.csuohio.edu</a></p>
+            </div>
             <div class="footer-links">
                 <div>
-                    <a href="#">About Me</a>
+                    <a href="#home">Home</a>
                 </div>
                 <div>
-                    <a href="#">GitHub</a>
+                    <a href="#projects">Projects</a>
+                </div>
+                <div>
+                    <a href="#experience">Experience</a>
+                </div>
+                <div>
+                    <a href="#skills">Skills</a>
+                </div>
+                <div>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div>
                     <a href="#">LinkedIn</a>
                 </div>
                 <div>
-                    <a href="#">Twitter</a>
-                </div>
-                <div>
-                    <a href="#">Contact</a>
-                </div>
-                <div>
                     <a href="#">Resume</a>
                 </div>
                 <div>
-                    <a href="#">Blog</a>
-                </div>
-                <div>
-                    <a href="#">Email</a>
+                    <a href="#">GitHub</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Your Name. All rights reserved.</p>
+                <p>&copy; 2025 Uday Kumar Alahari. All rights reserved.</p>
             </div>
         </div>
     </footer>
